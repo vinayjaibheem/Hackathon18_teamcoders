@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 from sklearn import linear_model
-from sklearn import cross_validation
+from sklearn import cross_decomposition
 from sklearn.metrics import mean_squared_error
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
@@ -99,7 +99,7 @@ target = pd.DataFrame(target)
 reg = linear_model.LinearRegression()
 
 # object for cross validation
-cross_valid = cross_validation.KFold(len(predictors), n_folds = k_fold)
+cross_valid = cross_decomposition.KFold(len(predictors), n_folds = k_fold)
 
 # training LinearRegression model for 10 folds
 for train_indices, test_indices in cross_valid:
